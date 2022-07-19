@@ -1,0 +1,40 @@
+﻿@model System.Collections.Generic.IEnumerable<CarCRUD.Models.Cars?>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <a asp-controller="Car" asp-action="Create" class="btn btn-dark">Create</a>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Model</th>
+                <th>Type</th>
+                <th>Color</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var car in Model)
+            {
+                <tr>
+                    <td>@car.Name</td>
+                    <td>@car.Model</td>
+                    <td>@car.Type</td>
+                    <td>@car.Color</td>
+                    <td>
+                        <a asp-controller="Car" asp-action="Edit" asp-route-carId="@car.Id">Edit</a> | 
+                        <a asp-controller="Car" asp-action="Details" asp-route-userId="@car.Id">Detais</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-3"></div>
+</div>
