@@ -22,13 +22,7 @@ namespace CarCRUD.Service
 
         public async Task<IEnumerable<Cars?>> GetCars()
         {
-            return await _db.Cars.Select(u => new Cars
-            {
-                Name = u.Name,
-                Model = u.Model,
-                Color = u.Color,
-                Type = u.Type
-            }).ToListAsync();
+            return await _db.Cars.ToListAsync();
         }
 
         public async Task<Cars?> GetById(int carId)

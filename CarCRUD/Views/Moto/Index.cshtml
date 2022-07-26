@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CarCRUD.ModelView.MotoViewModel?>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <a asp-controller="Moto" asp-action="Create" class="btn btn-dark">Create</a>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>DataBuild</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var moto in Model)
+            {
+                <tr>
+                    <td>@moto.Name</td>
+                    <td>@moto.DataBuild</td>
+                    <td>
+                        <a asp-controller="Moto" asp-action="Edit" asp-route-motoId="@moto.Id">Edit</a> | 
+                        <a asp-controller="Moto" asp-action="Details" asp-route-motoId="@moto.Id">Detais</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-3"></div>
+</div>
