@@ -2,14 +2,15 @@
 
 namespace CarCRUD.Models
 {
-    public class Cars
+    public class Motos
     {
-        
+        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Введите имя!!!")]
         public string? Name { get; set; }
+        
+        public int DataBuild { get; set; }
+        [Required(ErrorMessage = "Введите модель!!!")]
         public string? Model { get; set; }
-        public string? Color { get; set; }
-        public string? Type { get; set; }
     }
 }

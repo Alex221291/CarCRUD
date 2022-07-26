@@ -14,5 +14,10 @@ namespace CarCRUD.Data
             get;
             set;
         }
+        public DbSet<Motos> Motos
+        {
+            get;
+            set;
+        }
     }
 }
